@@ -1,0 +1,42 @@
+Remeber we are building -A FLASK APP THAT calculates word frequency pairs based on yhe text form a given URL.
+
+
+First, start REDIS IN ONE TERMINAL WINDOW;
+Shell
+$ redis-server
+
+In another window, find your project directory and then run the worker:
+Shell
+$ cd flask-by-example
+$ pythone worker.py
+20:38:04 RQ worker started, version 0.5.6
+20:38:04
+20:38:04*** LISTENING ON DEFAULT.....
+
+AT THE END,OPEN A THIRD TERMINAL WINDOW, NAVIGATE TO YOUR PROJECT DIRECTORY, AND START THE MAIN APP:
+SHELL
+$ cd flask-by-example
+$ pythone manage.py runserver
+
+OPEN UP http://localhost.5000/ and test with the URL https:/brealpythone.com. IN THE TERMINAL
+a job id musthave outputted. Grab the id and navigate to this URL:
+
+https:/blocalhost:5000/results/add_the_job_id_here
+
+You have to see a similar JSON response in your browser:
+
+JSON
+
+{
+"COURSE": 5,
+"Python": 19,
+"Real": 11,
+"course": 4,
+"course": 7,
+"development": 7,
+"sample": 4,
+"three": 4,
+"videos": 5,
+"web": 12
+
+
